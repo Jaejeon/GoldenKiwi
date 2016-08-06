@@ -115,10 +115,10 @@ function kCalendar(id, selectedDate, date) {
             $('.selected').removeClass('selected');
         $(this).addClass('selected');
         if($(this).text().length == 1){
-            var url = 'http://localhost:3000/api/calendar/'  + currentYear + '-' + currentMonth + '-0' + $(this).text();
+            var url = 'http://52.78.23.87/api/calendar/'  + currentYear + '-' + currentMonth + '-0' + $(this).text();
         }
         else{
-            var url = 'http://localhost:3000/api/calendar/'  + currentYear + '-' + currentMonth + '-' + $(this).text();
+            var url = 'http://52.78.23.87/api/calendar/'  + currentYear + '-' + currentMonth + '-' + $(this).text();
         }
         console.log( url );
         $.get(url, function(data){
