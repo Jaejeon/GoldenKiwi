@@ -38,7 +38,9 @@ module.exports = function(poll_result){
         res.on('data', function (chunk) {
             parser.parseString(chunk, function (err, result) {
                 if (!result) return console.log("API response error");
-                var newsList = result.rss.channel[0].item;
+                if (!result.rss) return console.log("API response error");
+		if (!result.rss.channel) return console.log("API response error");
+		var newsList = result.rss.channel[0].item;
                 var newsTitle = "1";
                 var newsDesc = "2";
                 var links = [];
