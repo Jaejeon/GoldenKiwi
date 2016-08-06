@@ -114,7 +114,27 @@ function kCalendar(id, selectedDate, date) {
         if($('.selected')!='undefined')
             $('.selected').removeClass('selected');
         $(this).addClass('selected');
-        console.log($(this).text());
+        if($(this).text().length == 1){
+            var url = 'http://localhost:3000/api/calendar/'  + currentYear + '-' + currentMonth + '-0' + $(this).text();
+        }
+        else{
+            var url = 'http://localhost:3000/api/calendar/'  + currentYear + '-' + currentMonth + '-' + $(this).text();
+        }
+        console.log( url );
+        $.get(url, function(data){
+            $('#result-panel').empty();
+            $('#result-panel').append(data);
+            var total_count = 0;
+            $('.history-count').each(function(index,element){
+                total_count += parseInt(element.innerText);
+                $(element).css('display', 'none');
+            });
+            $('.history-words').each(function(index,element){
+                $(element).children('.history-topic').css('font-size', ''+ ((parseInt($(element).children('.history-count')[0].innerText)/total_count)*100 + 20)+'px');
+                $(element).children('.history-topic').css('border-radius', ''+ ((parseInt($(element).children('.history-count')[0].innerText)/total_count)*100 + 20)/2 + 'px');
+            });
+
+        });
     })
 
 }

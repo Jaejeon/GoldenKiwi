@@ -110,20 +110,23 @@ module.exports = function(poll_result){
                         else {
                             var newKiwi = new Kiwi({topic: poll_result[0], keywords: keywords, count: 1});
                             newKiwi.save(function (err) {
-				Tree.findOne({date:'now'}, function(err, tree){tree.topics.push(newKiwi._id); tree.save();});
+				            Tree.findOne({date:'now'}, function(err, tree){tree.topics.push(newKiwi._id); tree.save();});
+
                                 Tree.findOne({date: format('yyyy/MM/dd', new Date())}, function (err, tree) {
                                     if (err) console.log(err);
                                     if (tree) {
                                         tree.topics.push(newKiwi._id);
-					tree.save();
+
+					                    tree.save();
                                     }
                                     else {
                                         var newTree = new Tree;
-					newTree.date = format('yyyy/MM/dd', new Date());
-					newTree.topics = [];
-					newTree.topics.push(newKiwi._id);
+                                        newTree.date = format('yyyy/MM/dd', new Date());
+                                        newTree.topics = [];
+                                        newTree.topics.push(newKiwi._id);
                                         newTree.save(function (err) {
-					});
+					                    });
+
                                     }
 
                                 });
