@@ -1,11 +1,10 @@
 div.col-sm-6
     .service.wow.fadeInUp
-        .item-rank #{val[1]}
-            i.fa.fa-arrow-up
+        .item-rank #{val[4]}
         .item-topic #{val[0]}
 
         p.vertical-space
         each word in val[2]
             span.item-keywords #{word}
         p.vertical-space
-        a.big-link-1(href='/') 관련 기사 보기
+        a.big-link-1(href='#{val[3]}') 관련 기사 보기
