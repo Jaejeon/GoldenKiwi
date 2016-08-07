@@ -4,9 +4,12 @@
 var mongoose = require('mongoose');
 
 var KiwiSchema = new mongoose.Schema({
-   topic: String,
+    topic: String,
     keywords: [String],
-    count: Number
+    count: Number,
+    url: String,
+    ranking: Number,
+    status : String
 });
 
 module.exports = KiwiSchema;
