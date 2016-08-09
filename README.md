@@ -3,6 +3,7 @@
  ![resultImg](https://github.com/Jaejeon/GreenKiwi/blob/master/greenkiwi1.PNG)
  <br />
  급상승 검색어를 뽑아내 해당 검색어가 어떤 이유로 이슈인지 텍스트 형태소 분석을 통해 아래와 같이 제공합니다.
+ <br />
  아래에 표시되는 단어들은 해당 검색어와 관련된 키워드들로 이를 통해서 어떤 검색어가 왜 이슈인지 한 눈에 알 수 있습니다.
  <br />
  ![resultImg2](https://github.com/Jaejeon/GreenKiwi/blob/master/greenkiwi2.PNG)
