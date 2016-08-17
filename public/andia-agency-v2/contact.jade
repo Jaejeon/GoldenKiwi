@@ -1,0 +1,118 @@
+extends layout
+
+block content
+    // Page Title
+    .page-title-container
+      .container
+        .row
+          .col-sm-12.wow.fadeIn
+            i.fa.fa-envelope
+            h1 Contact Us /
+            p Here is how you can contact us
+    // Contact Us
+    .contact-us-container
+      .container
+        .row
+          .col-sm-7.contact-form.wow.fadeInLeft
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              | Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              a(href='') suscipit lobortis
+              | 	                    	nisl ut aliquip ex ea commodo consequat.
+            form(role='form', action='assets/contact.php', method='post')
+              .form-group
+                label(for='contact-name') Name
+                input#contact-name.contact-name(type='text', name='name', placeholder='Enter your name...')
+              .form-group
+                label(for='contact-email') Email
+                input#contact-email.contact-email(type='text', name='email', placeholder='Enter your email...')
+              .form-group
+                label(for='contact-subject') Subject
+                input#contact-subject.contact-subject(type='text', name='subject', placeholder='Your subject...')
+              .form-group
+                label(for='contact-message') Message
+                textarea#contact-message.contact-message(name='message', placeholder='Your message...')
+              button.btn(type='submit') Send
+          .col-sm-5.contact-address.wow.fadeInUp
+            h3 We Are Here
+            .map
+            h3 Address
+            p
+              | Via Principe Amedeo 9
+              br
+              |  10100, Torino, TO, Italy
+            p Phone: 0039 333 12 68 347
+    // Footer
+    footer
+      .container
+        .row
+          .col-sm-3.footer-box.wow.fadeInUp
+            h4 About Us
+            .footer-box-text
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              p
+                a(href='about.html') Read more...
+          .col-sm-3.footer-box.wow.fadeInDown
+            h4 Email Updates
+            .footer-box-text.footer-box-text-subscribe
+              p Enter your email and you'll be one of the first to get new updates:
+              form(role='form', action='assets/subscribe.php', method='post')
+                .form-group
+                  label.sr-only(for='subscribe-email') Email address
+                  input#subscribe-email.subscribe-email(type='text', name='email', placeholder='Email...')
+                button.btn(type='submit') Subscribe
+              p.success-message
+              p.error-message
+          .col-sm-3.footer-box.wow.fadeInUp
+            h4 Flickr Photos
+            .footer-box-text.flickr-feed
+          .col-sm-3.footer-box.wow.fadeInDown
+            h4 Contact Us
+            .footer-box-text.footer-box-text-contact
+              p
+                i.fa.fa-map-marker
+                |  Address: Via Principe Amedeo 9, 10100, Torino, TO, Italy
+              p
+                i.fa.fa-phone
+                |  Phone: 0039 333 12 68 347
+              p
+                i.fa.fa-user
+                |  Skype: Andia_Agency
+              p
+                i.fa.fa-envelope
+                |  Email:
+                a(href='') contact@andia.co.uk
+        .row
+          .col-sm-12.wow.fadeIn
+            .footer-border
+        .row
+          .col-sm-7.footer-copyright.wow.fadeIn
+            p
+              | Copyright 2012 Andia - All rights reserved. Template by
+              a(href='http://azmind.com') Azmind
+              | .
+          .col-sm-5.footer-social.wow.fadeIn
+            a(href='#')
+              i.fa.fa-facebook
+            a(href='#')
+              i.fa.fa-dribbble
+            a(href='#')
+              i.fa.fa-twitter
+            a(href='#')
+              i.fa.fa-pinterest
+    // Javascript
+    script(src='assets/js/jquery-1.11.1.min.js')
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/bootstrap-hover-dropdown.min.js')
+    script(src='assets/js/jquery.backstretch.min.js')
+    script(src='assets/js/wow.min.js')
+    script(src='assets/js/retina-1.1.0.min.js')
+    script(src='assets/js/jquery.magnific-popup.min.js')
+    script(src='assets/flexslider/jquery.flexslider-min.js')
+    script(src='assets/js/jflickrfeed.min.js')
+    script(src='assets/js/masonry.pkgd.min.js')
+    script(src='http://maps.google.com/maps/api/js?sensor=true')
+    script(src='assets/js/jquery.ui.map.min.js')
+    script(src='assets/js/scripts.js')

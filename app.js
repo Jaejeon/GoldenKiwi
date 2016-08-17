@@ -9,9 +9,29 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var asyncPolling = require('async-polling');
+var poll = require('./modules/poll.js');
+var findKeywords = require('./modules/findKeywords.js');
+var async = require('async');
+var mecab = require('mecab-ya');
+
+var format = require('date-format');
+
+var mongoose = require('mongoose');
+var db = mongoose.connection;
+db.on('error', console.error);
+db.once('open', function(){
+  console.log("Connected to mongod server");
+});
+mongoose.connect('mongodb://52.78.23.87/greenkiwidb');
+
+var KiwiSchema = require('./models/Kiwi.js');
+var Kiwi = mongoose.model('Kiwi', KiwiSchema);
+var TreeSchema = require('./models/Tree.js');
+var Tree = mongoose.model('Tree', TreeSchema);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/andia-agency-v2'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -25,6 +45,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+var words = new Array();
+words[0] = new Array();
+words[1] = new Array();
+
+var polling = asyncPolling(function (end){
+  async.series([
+     function(callback){
+        words = [];
+        poll(words, callback);
+     },
+     function(callback){
+	Tree.findOne({date: 'now'}, function(err,tree){
+	    tree.topics = [];
+	    tree.save(function(err){callback(null,1)});
+	});
+     }
+  ], function(err, result){
+    for(var i = 0; i < words.length; i++){
+      findKeywords(words[i]);
+    }
+    end(null, '#' + result + ' wait a second...');
+  });
+}, 30000);
+
+polling.run();
+
+//findKeywords();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

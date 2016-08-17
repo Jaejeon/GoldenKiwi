@@ -1,0 +1,179 @@
+extends layout
+
+block content
+    // Page Title
+    .page-title-container
+      .container
+        .row
+          .col-sm-12.wow.fadeIn
+            i.fa.fa-tasks
+            h1 Services /
+            p Here are the services we offer
+    // Services Full Width Text
+    .services-full-width-container
+      .container
+        .row
+          .col-sm-12.services-full-width-text.wow.fadeInLeft
+            h3 Lorem Ipsum Dolor Sit Amet
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              | Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              span.violet suscipit lobortis
+              | 	                    	nisl ut aliquip ex ea commodo consequat. Lorem ipsum
+              strong dolor sit amet
+              | , consectetur adipisicing elit,
+              | 	                    	sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              | 	                    	suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | 	                    	sed do
+              strong eiusmod tempor
+              |  incididunt.
+    // Services
+    .services-container
+      .container
+        .row
+          .col-sm-3
+            .service.wow.fadeInUp
+              .service-icon
+                i.fa.fa-eye
+              h3 Beautiful Websites
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+          .col-sm-3
+            .service.wow.fadeInDown
+              .service-icon
+                i.fa.fa-table
+              h3 Responsive Layout
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+          .col-sm-3
+            .service.wow.fadeInUp
+              .service-icon
+                i.fa.fa-magic
+              h3 Awesome Logos
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+          .col-sm-3
+            .service.wow.fadeInDown
+              .service-icon
+                i.fa.fa-print
+              h3 High Res Prints
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+    // Services Half Width Text
+    .services-half-width-container
+      .container
+        .row
+          .col-sm-6.services-half-width-text.wow.fadeInLeft
+            h3 Lorem Ipsum
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              | Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              span.violet suscipit lobortis
+              | 	                    	nisl ut aliquip ex ea commodo consequat. Lorem ipsum
+              strong dolor sit amet
+              | , consectetur adipisicing elit,
+              | 	                    	sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              | 	                    	suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | 	                    	sed do
+              strong eiusmod tempor
+              |  incididunt.
+          .col-sm-6.services-half-width-text.wow.fadeInUp
+            h3 Dolor Sit Amet
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              | Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              span.violet suscipit lobortis
+              | 	                    	nisl ut aliquip ex ea commodo consequat. Lorem ipsum
+              strong dolor sit amet
+              | , consectetur adipisicing elit,
+              | 	                    	sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              | 	                    	suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | 	                    	sed do
+              strong eiusmod tempor
+              |  incididunt.
+    // Call To Action
+    .call-to-action-container
+      .container
+        .row
+          .col-sm-12.call-to-action-text.wow.fadeInLeftBig
+            p
+              | Lorem ipsum
+              span.violet dolor sit amet
+              | , consectetur adipisicing elit,
+              | 	                    	sed do eiusmod tempor incididunt ut labore et ut wisi.
+            .call-to-action-button
+              a.big-link-3(href='#') Try It Now!
+    // Footer
+    footer
+      .container
+        .row
+          .col-sm-3.footer-box.wow.fadeInUp
+            h4 About Us
+            .footer-box-text
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+              p
+                a(href='about.html') Read more...
+          .col-sm-3.footer-box.wow.fadeInDown
+            h4 Email Updates
+            .footer-box-text.footer-box-text-subscribe
+              p Enter your email and you'll be one of the first to get new updates:
+              form(role='form', action='assets/subscribe.php', method='post')
+                .form-group
+                  label.sr-only(for='subscribe-email') Email address
+                  input#subscribe-email.subscribe-email(type='text', name='email', placeholder='Email...')
+                button.btn(type='submit') Subscribe
+              p.success-message
+              p.error-message
+          .col-sm-3.footer-box.wow.fadeInUp
+            h4 Flickr Photos
+            .footer-box-text.flickr-feed
+          .col-sm-3.footer-box.wow.fadeInDown
+            h4 Contact Us
+            .footer-box-text.footer-box-text-contact
+              p
+                i.fa.fa-map-marker
+                |  Address: Via Principe Amedeo 9, 10100, Torino, TO, Italy
+              p
+                i.fa.fa-phone
+                |  Phone: 0039 333 12 68 347
+              p
+                i.fa.fa-user
+                |  Skype: Andia_Agency
+              p
+                i.fa.fa-envelope
+                |  Email:
+                a(href='') contact@andia.co.uk
+        .row
+          .col-sm-12.wow.fadeIn
+            .footer-border
+        .row
+          .col-sm-7.footer-copyright.wow.fadeIn
+            p
+              | Copyright 2012 Andia - All rights reserved. Template by
+              a(href='http://azmind.com') Azmind
+              | .
+          .col-sm-5.footer-social.wow.fadeIn
+            a(href='#')
+              i.fa.fa-facebook
+            a(href='#')
+              i.fa.fa-dribbble
+            a(href='#')
+              i.fa.fa-twitter
+            a(href='#')
+              i.fa.fa-pinterest
+    // Javascript
+    script(src='assets/js/jquery-1.11.1.min.js')
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/bootstrap-hover-dropdown.min.js')
+    script(src='assets/js/jquery.backstretch.min.js')
+    script(src='assets/js/wow.min.js')
+    script(src='assets/js/retina-1.1.0.min.js')
+    script(src='assets/js/jquery.magnific-popup.min.js')
+    script(src='assets/flexslider/jquery.flexslider-min.js')
+    script(src='assets/js/jflickrfeed.min.js')
+    script(src='assets/js/masonry.pkgd.min.js')
+    script(src='http://maps.google.com/maps/api/js?sensor=true')
+    script(src='assets/js/jquery.ui.map.min.js')
+    script(src='assets/js/scripts.js')
